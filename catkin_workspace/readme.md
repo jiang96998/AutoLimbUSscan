@@ -15,6 +15,7 @@ After building this project, do as the following:
 3. source install/setup.bash --extend
 
 Then you can use python3 to send/receive pics to/from ROS Melodic.(it helps when you trained your network with python3)
+
 eg. you have predict.py in project "segmentation".
 
 1. cd segmentation/src/scripts
