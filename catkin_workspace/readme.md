@@ -5,7 +5,7 @@ This project is about how to use python3 with Anaconda to communicate with ROS M
 Before building the project, do as the following:
 
 1. cd catkin_workspace
-2. catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so 	%%%%% the path depends
+2. catkin config -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so 	    (the path depends)
 3. catkin config --install
 
 After building this project, do as the following:
