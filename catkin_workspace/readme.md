@@ -1,6 +1,4 @@
-****************************
-2022.06.12 By Yuan_Gao
-****************************
+
 
 This project is about how to use python3 with Anaconda to communicate with ROS Melodic in Ubuntu 18.
 

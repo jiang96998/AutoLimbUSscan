@@ -1,6 +1,3 @@
-****************************
-2022.06.12 By Yuan_Gao
-****************************
 
 This project is about the generation of vascular scan path using OpenPose and Quasi-Newton nonrigid registration.
 

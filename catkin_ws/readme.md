@@ -1,6 +1,3 @@
-****************************
-2022.06.12 By Yuan_Gao
-****************************
 
 The project is mainly about how to coontrol KUKA robot to scan the arm.
 
