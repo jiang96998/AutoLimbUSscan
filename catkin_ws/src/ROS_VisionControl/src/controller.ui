@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Controller</class>
+ <widget class="QWidget" name="Controller">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>644</width>
+    <height>992</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="tab_1">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <attribute name="title">
+       <string>TestFunction</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="3" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QPushButton" name="pbtnConnect">
+           <property name="text">
+            <string>Connect</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnDisconnect">
+           <property name="text">
+            <string>Disconnect</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="18" column="0">
+        <widget class="QPushButton" name="pbtn_test_rotation">
+         <property name="text">
+          <string>Test Rotation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="4" column="0">
+          <widget class="QLabel" name="lblPosAngle">
+           <property name="text">
+            <string>Ang(rad)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lblPosZ">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Z</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="lblPosRa">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Ra</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lblPosY">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblPosDistance">
+           <property name="text">
+            <string>Pos(mm)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblPosX">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>X</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="ledtPosX"/>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="ledtPosY"/>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="ledtPosZ"/>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="lblPosRb">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Rb</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="lblPosRc">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text">
+            <string>Rc</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="ledtAngRa"/>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="ledtAngRb"/>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLineEdit" name="ledtAngRc"/>
+         </item>
+         <item row="5" column="3">
+          <widget class="QPushButton" name="pbtnExcuteCmd">
+           <property name="text">
+            <string>Excute Cmd</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QCheckBox" name="chbRecordWrench">
+           <property name="text">
+            <string>Record Wrench</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QCheckBox" name="chbUpdateState">
+           <property name="text">
+            <string>Update</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="11" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QLineEdit" name="ledtSliceIndex">
+           <property name="placeholderText">
+            <string>Index in Sweep</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnComputerConfiMap">
+           <property name="text">
+            <string>Compute Confi Map</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="9" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="ledt_full_path_to_imf">
+           <property name="placeholderText">
+            <string>Full path to an .imf file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnLoadSweep_imf">
+           <property name="text">
+            <string>Load imf sweep</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="pbtnSaveHome">
+           <property name="text">
+            <string>Save Home</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnSaveOut">
+           <property name="text">
+            <string>Save Out</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnGoHome">
+           <property name="text">
+            <string>GoHome</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnGoOut">
+           <property name="text">
+            <string>GoOut</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="pbtnStartUSStream">
+         <property name="text">
+          <string>Start US Stream</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="ledt_trajectory_file_to_write">
+           <property name="text">
+            <string>/home/zhongliang/yuangao/roscode/catkin_ws/src/dataset/robot.txt</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnWriteCurrRobotPose">
+           <property name="text">
+            <string>Write Current Pose to a File</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="13" column="0">
+        <widget class="QPushButton" name="pbtnVisualizeConfimap">
+         <property name="text">
+          <string>Visualize Confimap</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="ledtForceZ"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblForceX">
+           <property name="text">
+            <string>FX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="lblForceZ">
+           <property name="text">
+            <string>FZ</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="lblForceY">
+           <property name="text">
+            <string>FY</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="lblToqueY">
+           <property name="text">
+            <string>TY</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="ledtForceX"/>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="lblToqueZ">
+           <property name="text">
+            <string>TZ</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="lblToqueX">
+           <property name="text">
+            <string>TX</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblForce">
+           <property name="text">
+            <string>Force(N)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="ledtForceY"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lblToque">
+           <property name="text">
+            <string>Toque(XX)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="ledtToqueX"/>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="ledtToqueY"/>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLineEdit" name="ledtToqueZ"/>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="pbtnStopUSStream">
+         <property name="text">
+          <string>Stop US Stream</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="pbtnInitROS">
+         <property name="text">
+          <string>Initialize ROS</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>TaskFunction</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Initial start angle of Fan motion:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pbtnGoFanStart">
+           <property name="text">
+            <string>Move to Initial Pose of Fan Motion</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QComboBox" name="cmbFanStartRotationAxis">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <property name="currentText">
+            <string>Rotation X</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>Rotation X</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotation Y</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="ledtFanStartAngle"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QComboBox" name="cmbFanMotionType">
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Continous Fan Motion</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Step Fan Motion</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbRotationAxis">
+           <item>
+            <property name="text">
+             <string>Rotation X</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotation Y</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbRotationStep">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>1 degree</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2 degree</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>3 degree</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4 degree</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5 degree</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnFanMotion">
+           <property name="text">
+            <string>Fan Motion</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="VisionControl">
+      <attribute name="title">
+       <string>VisionControl</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="16" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLineEdit" name="ledtMainDir">
+           <property name="placeholderText">
+            <string>Path to main dir</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnCreateUSForLabelsWithoutStich">
+           <property name="text">
+            <string>Create US Sweep For Labels</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QPushButton" name="pbtnExecScan">
+           <property name="text">
+            <string>Execute US Scan</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="15" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLineEdit" name="ledtSweepPath">
+           <property name="inputMask">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Full Path to Sweep</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ledtDownsamplingParam">
+           <property name="text">
+            <string>5</string>
+           </property>
+           <property name="placeholderText">
+            <string>Select every n frame</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnDownsampleSweep">
+           <property name="text">
+            <string>Downsample US Sweep</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="ledt_poses_file_path">
+         <property name="text">
+          <string>/home/zhongliang/yuangao/trajectory.txt</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QPushButton" name="pbtnContinueScan">
+         <property name="text">
+          <string>Back to Break Point and Continue Scanning</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="2" column="0">
+          <widget class="QLineEdit" name="ledtStiffness"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="ledtDesiredForce"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblStiffness">
+           <property name="text">
+            <string>Stifness</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="lblSesiredForce">
+           <property name="text">
+            <string>Desired Force</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="pbtnReadPosesFromFile">
+         <property name="text">
+          <string>Load Poses</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QRadioButton" name="rbtn_no_fine_tuning">
+             <property name="text">
+              <string>No fine Tuning</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rbtn_fine_tuning_1">
+             <property name="text">
+              <string>Fine tuning 1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="rbtn_both_fine_tunings">
+             <property name="text">
+              <string>Both</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_include_whole_sweep">
+           <property name="text">
+            <string>Include whole sweep</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="ledtDataDir">
+           <property name="placeholderText">
+            <string>Data Dir</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtn_stitching">
+           <property name="text">
+            <string>Stitching</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QPushButton" name="pbtnForceMode">
+           <property name="text">
+            <string>Force Mode</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbtnPositionMode">
+           <property name="text">
+            <string>Postion Mode</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="pbtnGoIntiPos">
+         <property name="text">
+          <string>Move to Initial Position</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <property name="spacing">
+          <number>9</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetMaximumSize</enum>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="stop_toggle">
+           <property name="text">
+            <string>StopRobot</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="feedback_toggle">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Compensation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="GenerateButton">
+           <property name="text">
+            <string>GenerateLabelImf</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

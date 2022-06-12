@@ -1,0 +1,12 @@
+<launch>
+    <arg name="board_x" default="9" doc="The number of grids along the x axis, in the inner part" />
+    <arg name="board_y" default="8" doc="he number of grids along the y axis, in the inner part" />
+    <node pkg="shape_registration" type="calibration_checker_node" name="chessboard_calibration" output="screen">
+        <remap from="/camera_info" to="/k4a/depth_to_rgb/camera_info"/>
+        <remap from="/depth_to_rgb_image" to="/k4a/depth_to_rgb/image_rect"/>
+        <remap from="/rgb_image" to="/k4a/rgb/image_rect_color"/>
+        <param name="board_x" type="int" value="$(arg board_x)" />
+        <param name="board_y" type="int" value="$(arg board_y)"/>
+        <param name="calibration_file_path" type="string" value="/home/nehil/.ros/easy_handeye/iiwa_azure_kinect_eye_on_base.yaml"/>
+    </node>
+</launch>

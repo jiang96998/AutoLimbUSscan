@@ -1,0 +1,46 @@
+<launch>
+<!-- Common arguments -->
+
+<arg name="voxel_size" default="0.015"/>
+<arg name="CT_arm_data_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/dataset/registration/arm.pcd"/>
+<arg name="CT_artery_data_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/dataset/registration/artery.pcd"/>
+<arg name="segmented_CT_arm_data_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/dataset/registration/plane_segmented_arm.pcd"/>
+<arg name="ROI_cloud_published_to" default="/points_created"/>
+<arg name="plane_segmented_cloud_published_to" default="/plane_segmented_data"/>
+<arg name="calibation_file_full_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/dataset/registration/iiwa_azure_kinect_eye_on_base.yaml"/>
+
+<arg name="catkin_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/"/>
+
+
+<!-- Nodes -->
+
+<!-- STEP 1: START CAMERA DRIVER AND RUN THE NODE WHICH WILL CROP THE ROI AND GENERATE THE POINTCLOUD-->
+<include file="$(find shape_registration)/launch/generate_point_cloud.launch"/>
+
+<!-- STEP 2: Extract the planar structures from both the CT and the RGBD camera data -->
+<node pkg="shape_registration" type="plane_segmentation_node" name="plane_segmentation">
+    <param name="input_path_arm_data" type="string" value="$(arg CT_arm_data_path)"/>
+    <param name="catkin_directory_path" type="string" value="$(arg catkin_path)"/>
+    <param name="calibration_file_path" type="string" value="$(arg calibation_file_full_path)"/>
+    <param name="input_path_artery_data" type="string" value="$(arg CT_artery_data_path)"/>
+    <param name="output_path_segmented_arm_data" type="string" value="$(arg segmented_CT_arm_data_path)"/>
+    <param name="plane_segmentation_threshold_for_CT" type="double" value="23"/>
+    <param name="plane_segmentation_threshold_for_RGBD" type="double" value="0.020"/>
+    <param name="subscribe_to" type="string" value="$(arg ROI_cloud_published_to)"/>
+    <param name="publish_to" type="string" value="$(arg plane_segmented_cloud_published_to)"/>
+</node>
+
+<!-- STEP 3: Register CT data with the point cloud data preprocessed in the previous step using ICP -->
+<node pkg="shape_registration" type="registration_node" name="icp_registration" output="screen">
+    <param name="calibration_file_path" type="string" value="$(arg calibation_file_full_path)"/>
+    <param name="catkin_directory_path" type="string" value="$(arg catkin_path)"/>
+    <param name="ct_arm_data_path" type="string" value="$(arg segmented_CT_arm_data_path)"/>
+    <param name="ct_artery_data_path" type="string" value="$(arg CT_artery_data_path)"/>
+    <param name="icp_max_num_of_iterations" type="double" value="300"/>
+    <param name="voxel_grid_filter_voxel_size" type="double" value="$(arg voxel_size)"/>
+    <param name="subscribe_to" type="string" value="$(arg plane_segmented_cloud_published_to)"/>
+</node>
+
+
+</launch>
+

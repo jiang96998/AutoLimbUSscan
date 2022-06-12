@@ -1,0 +1,31 @@
+<launch>
+
+<arg name="method" default="aruco" doc="aruco, chessboard, selection"/>
+<arg name="marker_id" doc="The ID of the ArUco marker used" default="584"/>
+<arg name="board_x" default="7" doc="Set this, if you use chessboard pattern, The number of grids along the x axis, in the inner part" />
+<arg name="board_y" default="6" doc="Set this, if you use chessboard pattern,The number of grids along the y axis, in the inner part" />
+<arg name="calibation_file_full_path" default="/home/zhongliang/ros/nehil/markerless_motion_capture_for_RUSS/dataset/registration/iiwa_azure_kinect_eye_on_base.yaml"/>
+<arg name="use_test_gui" default="False" doc="Set to true if you want to use it without the robot"/>
+    
+<!-- STEP 1: START CAMERA DRIVER -->
+<!-- Includes from other ROS packages-->
+<include file="$(find shape_registration)/launch/start_azure_rectifiers.launch"/>
+
+<!-- STEP 2: START MOVEMENT MONITORING -->
+<node pkg="shape_registration" type="movement_detector.py" name="movement_detector" output="screen">
+    <param name="use_test_gui" type="boolean" value="$(arg use_test_gui)"/>
+</node>
+
+<!-- STEP 3: START TRACKING -->
+<node pkg="shape_registration" type="tracking_node" name="movement_monitoring" output="screen">
+    <param name="error_check_method" type="string" value="$(arg method)"/>
+    <param name="calibration_file_path" type="string" value="$(arg calibation_file_full_path)"/>
+    <param name="plane_segmentation_threshold" type="double" value="0.017"/>
+    <param name="voxel_grid_filter_voxel_size" type="double" value="0.015"/>
+    <param name="board_x" type="int" value="$(arg board_x)" />
+    <param name="board_y" type="int" value="$(arg board_y)"/>
+    <param name="marker_id" type="int" value="$(arg marker_id)"/>
+    <param name="icp_max_num_of_iterations" type="int" value="1500"/>
+</node>
+
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+<!--Common arguments-->
+<arg name="directory_path_for_saving_images" default="/home/nehil/denemeee"/>
+
+<!-- STEP 1: START CAMERA DRIVER -->
+<!-- Includes from other ROS packages-->
+<include file="$(find shape_registration)/launch/start_azure_rectifiers.launch"/>
+
+<!-- STEP 1: START IMAGE SAVER -->
+<node pkg="shape_registration" type="image_saver.py" name="ImageSaverNode" output="screen">
+    <remap from="/rgb_image" to="/k4a/rgb/image_rect_color"/>
+    <param name="path" type="string" value="$(arg directory_path_for_saving_images)"/>
+    <param name="img_index" type="int" value="0"/>
+</node>
+</launch>

@@ -1,0 +1,33 @@
+<launch>
+
+    <arg name="board_x" default="7" doc="The number of grids along the x axis, in the inner part" />
+    <arg name="board_y" default="6" doc="he number of grids along the y axis, in the inner part" />
+    <!--<arg name="board_x" default="4" doc="The number of grids along the x axis, in the inner part" />
+    <arg name="board_y" default="4" doc="he number of grids along the y axis, in the inner part" />-->
+    <!-- STEP 1: START CAMERA DRIVER -->
+    <!-- Includes from other ROS packages-->
+    <include file="$(find shape_registration)/launch/start_azure_rectifiers.launch"/>
+
+
+    <!-- STEP 2: RUN THE NODE WHICH WILL CROP THE ROI AND GENERATE THE POINTCLOUD -->
+    <node pkg="shape_registration" type="calibration_checker_node" name="chessboard_calibration" output="screen">
+        <remap from="/camera_info" to="/k4a/depth_to_rgb/camera_info"/>
+        <remap from="/depth_to_rgb_image" to="/k4a/depth_to_rgb/image_rect"/>
+        <remap from="/rgb_image" to="/k4a/rgb/image_rect_color"/>
+        <param name="board_x" type="int" value="$(arg board_x)" />
+        <param name="board_y" type="int" value="$(arg board_y)"/>
+        <param name="calibration_file_path" type="string" value="/home/nehil/.ros/easy_handeye/iiwa_azure_kinect_eye_on_base.yaml"/>
+    </node>
+</launch>
+
+<!-- points used
+first board 7x6
+34
+14
+22
+3
+second board 9x8
+44
+24
+4
+-->

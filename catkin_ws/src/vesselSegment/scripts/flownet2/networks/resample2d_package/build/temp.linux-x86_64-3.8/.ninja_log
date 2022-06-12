@@ -1,0 +1,3 @@
+# ninja log v5
+0	13425	1641574039282747381	/home/zhongliang/yuangao/roscode/catkin_ws/src/vesselSegment/scripts/flownet2/networks/resample2d_package/build/temp.linux-x86_64-3.8/resample2d_cuda.o	c37982fb4b180795
+0	20444	1641574046302694010	/home/zhongliang/yuangao/roscode/catkin_ws/src/vesselSegment/scripts/flownet2/networks/resample2d_package/build/temp.linux-x86_64-3.8/resample2d_kernel.o	d3978198c47af6e3

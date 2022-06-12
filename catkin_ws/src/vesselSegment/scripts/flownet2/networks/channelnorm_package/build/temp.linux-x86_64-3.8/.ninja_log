@@ -1,0 +1,3 @@
+# ninja log v5
+0	13341	1641574110334181335	/home/zhongliang/yuangao/roscode/catkin_ws/src/vesselSegment/scripts/flownet2/networks/channelnorm_package/build/temp.linux-x86_64-3.8/channelnorm_cuda.o	6afd1afac917cc5f
+0	17235	1641574114230148710	/home/zhongliang/yuangao/roscode/catkin_ws/src/vesselSegment/scripts/flownet2/networks/channelnorm_package/build/temp.linux-x86_64-3.8/channelnorm_kernel.o	1b30156147cfd6ba
