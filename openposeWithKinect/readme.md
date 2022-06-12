@@ -18,3 +18,10 @@ NonRigidreg: do non-rigid registration between atlas and target based on Fast_RN
 
 workutils: generate path based on the correspondence between atlas and target.
 
+Before run the project you have to config the environment following the OpenPose.
+
+After building, make sure Kinect camera is connected and your arm is on the table, then just run:
+
+/build/examples/user__code/vessel/Fast_RNRR
+
+Then you will get results in directory "results"
