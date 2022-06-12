@@ -1,0 +1,6 @@
+devel_space: /home/zhongliang/yuangao/roscode/catkin_workspace/devel
+install: true
+install_space: /home/zhongliang/yuangao/roscode/catkin_workspace/install
+profile: default
+source_space: /home/zhongliang/yuangao/roscode/catkin_workspace/src
+workspace: /home/zhongliang/yuangao/roscode/catkin_workspace
